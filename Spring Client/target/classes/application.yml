@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      name: application-dev
+      profile: ${spring.profiles.active:dev}
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+
+logging:
+  level:
+    org.springframework.data.redis.core.RedisTemplate: DEBUG
+    org.springframework.data.redis.connection: DEBUG
+

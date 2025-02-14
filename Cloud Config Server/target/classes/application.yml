@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: composite
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    config:
+      server:
+        url:
+        bootstrap: true
+        composite:
+          - type: native
+            search-locations: classpath:/config/   # You can specify the structure here -> file:///home/user/project/src/main/resources/config/certificate.json or use a URI, Git path, or a server directory path
